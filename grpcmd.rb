@@ -5,20 +5,20 @@
 class Grpcmd < Formula
   desc ""
   homepage "https://github.com/grpcmd/grpcmd"
-  version "0.0.2"
+  version "0.1.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.0.2/grpcmd_0.0.2_darwin_amd64.tar.gz"
-      sha256 "cfe1fca361b182967cfb355e9dc3a2bdfd42319d3f57bbae3ed972e89ceef9c4"
+    if Hardware::CPU.arm?
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.0/grpcmd_0.1.0_darwin_arm64.tar.gz"
+      sha256 "da63d6d0b4962864165ac8043bfb99c36774e25dc4137c35c5b8073bdfe9a95d"
 
       def install
         bin.install "grpc"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.0.2/grpcmd_0.0.2_darwin_arm64.tar.gz"
-      sha256 "82c1e1e72fae9fdd2d9d934c593a441f48e9053e311449d343ef3b1b1b8b3efe"
+    if Hardware::CPU.intel?
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.0/grpcmd_0.1.0_darwin_amd64.tar.gz"
+      sha256 "5206d98c0cce69d5954d6dc97515a264f8ab96bac5623204f1f29c6c4caee8ca"
 
       def install
         bin.install "grpc"
@@ -28,16 +28,16 @@ class Grpcmd < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.0.2/grpcmd_0.0.2_linux_arm64.tar.gz"
-      sha256 "3232a43f1a401e01d6ab58cb7c2d3940377113207c191b9419830bb3ec6d27fa"
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.0/grpcmd_0.1.0_linux_arm64.tar.gz"
+      sha256 "81cc127db2f80ac644c6e4ba09b270051f1c985942975262392cc12481e4760b"
 
       def install
         bin.install "grpc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.0.2/grpcmd_0.0.2_linux_amd64.tar.gz"
-      sha256 "ff201935878f167daf305c897e92997b43a8f176cbf1dfac411e6301a6c53dfa"
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.0/grpcmd_0.1.0_linux_amd64.tar.gz"
+      sha256 "0fd66adbd9cebc86a597f1a121533dc218baf45b2e58c81bb8e1190033dbbdcb"
 
       def install
         bin.install "grpc"
