@@ -5,12 +5,12 @@
 class Grpcmd < Formula
   desc "A simple, easy-to-use, and developer-friendly CLI tool for gRPC."
   homepage "https://github.com/grpcmd/grpcmd"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.1/grpcmd_0.1.1_darwin_arm64.tar.gz"
-      sha256 "0e24a49c1535dec50152ca615301e4aa7b83b62f8b791de6ac876a437b4bb96a"
+    if Hardware::CPU.intel?
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.2/grpcmd_0.1.2_darwin_amd64.tar.gz"
+      sha256 "639fbf0ec1c76251fe1cfe2e3b5f8cee2cb15e8439a13af46547f5d6de41a465"
 
       def install
         bin.install "grpc"
@@ -19,9 +19,9 @@ class Grpcmd < Formula
         (zsh_completion/"_grpc").write `#{bin}/grpc completion zsh`
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.1/grpcmd_0.1.1_darwin_amd64.tar.gz"
-      sha256 "601c355a97c30cbf9c5f638c8388e5a21ccde65ad3d76d301a853f5249db815e"
+    if Hardware::CPU.arm?
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.2/grpcmd_0.1.2_darwin_arm64.tar.gz"
+      sha256 "1e843cc7b990ec857961c2e8610a0cc6d53e62abe3de0b730ae5c9390a838be1"
 
       def install
         bin.install "grpc"
@@ -33,9 +33,9 @@ class Grpcmd < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.1/grpcmd_0.1.1_linux_amd64.tar.gz"
-      sha256 "16fb2d92a3da427e3a95cb4b8d0879c0f5106783c76e2d5ab959e7b6c7ebe437"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.2/grpcmd_0.1.2_linux_arm64.tar.gz"
+      sha256 "d9209fe54476e6f210de556aee37992272444f58447ab7f49efd0111a90dd7d3"
 
       def install
         bin.install "grpc"
@@ -44,9 +44,9 @@ class Grpcmd < Formula
         (zsh_completion/"_grpc").write `#{bin}/grpc completion zsh`
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.1/grpcmd_0.1.1_linux_arm64.tar.gz"
-      sha256 "84ebb99adc54ca3f39a26fbd0bef1c213edfd6d3eb1d7f74a97f866b03295a67"
+    if Hardware::CPU.intel?
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.2/grpcmd_0.1.2_linux_amd64.tar.gz"
+      sha256 "afa523e3ddd01767f983ef1200cf90af26d490cd9c6bb63c3c327904fe6f724e"
 
       def install
         bin.install "grpc"
