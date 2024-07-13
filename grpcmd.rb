@@ -5,12 +5,12 @@
 class Grpcmd < Formula
   desc "A simple, easy-to-use, and developer-friendly CLI tool for gRPC."
   homepage "https://github.com/grpcmd/grpcmd"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.2/grpcmd_0.1.2_darwin_amd64.tar.gz"
-      sha256 "639fbf0ec1c76251fe1cfe2e3b5f8cee2cb15e8439a13af46547f5d6de41a465"
+    on_intel do
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.3/grpcmd_0.1.3_darwin_amd64.tar.gz"
+      sha256 "207cfa1c5e4075e6381d390d6a6279c2d0d07f4160281f8fe20101bdaa7c8315"
 
       def install
         bin.install "grpc"
@@ -19,9 +19,9 @@ class Grpcmd < Formula
         (zsh_completion/"_grpc").write `#{bin}/grpc completion zsh`
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.2/grpcmd_0.1.2_darwin_arm64.tar.gz"
-      sha256 "1e843cc7b990ec857961c2e8610a0cc6d53e62abe3de0b730ae5c9390a838be1"
+    on_arm do
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.3/grpcmd_0.1.3_darwin_arm64.tar.gz"
+      sha256 "869d4d3daed93bd8e6ee6db069362d8e77132ea981ac783250675e475feaa89b"
 
       def install
         bin.install "grpc"
@@ -33,26 +33,30 @@ class Grpcmd < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.2/grpcmd_0.1.2_linux_arm64.tar.gz"
-      sha256 "d9209fe54476e6f210de556aee37992272444f58447ab7f49efd0111a90dd7d3"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.3/grpcmd_0.1.3_linux_amd64.tar.gz"
+        sha256 "bd90171394af5e7491be59e355aed598a8e558b0a0b658c8aa8b7e90312413b1"
 
-      def install
-        bin.install "grpc"
-        (bash_completion/"grpc").write `#{bin}/grpc completion bash`
-        (fish_completion/"grpc.fish").write `#{bin}/grpc completion fish`
-        (zsh_completion/"_grpc").write `#{bin}/grpc completion zsh`
+        def install
+          bin.install "grpc"
+          (bash_completion/"grpc").write `#{bin}/grpc completion bash`
+          (fish_completion/"grpc.fish").write `#{bin}/grpc completion fish`
+          (zsh_completion/"_grpc").write `#{bin}/grpc completion zsh`
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.2/grpcmd_0.1.2_linux_amd64.tar.gz"
-      sha256 "afa523e3ddd01767f983ef1200cf90af26d490cd9c6bb63c3c327904fe6f724e"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/grpcmd/grpcmd/releases/download/v0.1.3/grpcmd_0.1.3_linux_arm64.tar.gz"
+        sha256 "0b7cbaf71c32f8e3a66be1ed571784ea8c6c9978861db2dc253830d712972920"
 
-      def install
-        bin.install "grpc"
-        (bash_completion/"grpc").write `#{bin}/grpc completion bash`
-        (fish_completion/"grpc.fish").write `#{bin}/grpc completion fish`
-        (zsh_completion/"_grpc").write `#{bin}/grpc completion zsh`
+        def install
+          bin.install "grpc"
+          (bash_completion/"grpc").write `#{bin}/grpc completion bash`
+          (fish_completion/"grpc.fish").write `#{bin}/grpc completion fish`
+          (zsh_completion/"_grpc").write `#{bin}/grpc completion zsh`
+        end
       end
     end
   end
