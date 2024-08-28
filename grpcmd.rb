@@ -5,12 +5,12 @@
 class Grpcmd < Formula
   desc "A simple, easy-to-use, and developer-friendly CLI tool for gRPC."
   homepage "https://github.com/grpcmd/grpcmd"
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
     on_intel do
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.2.0/grpcmd_0.2.0_darwin_amd64.tar.gz"
-      sha256 "dce8682e58bcebfc415c713ee070bd54924a568127d9df7696e59e476e5d7df9"
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.2.1/grpcmd_0.2.1_darwin_amd64.tar.gz"
+      sha256 "e079568064f68bd950e211d5a4d188e4837f9e003457eab86a6fa6b08882b5dc"
 
       def install
         bin.install "grpc"
@@ -20,8 +20,8 @@ class Grpcmd < Formula
       end
     end
     on_arm do
-      url "https://github.com/grpcmd/grpcmd/releases/download/v0.2.0/grpcmd_0.2.0_darwin_arm64.tar.gz"
-      sha256 "c9c654f3646f293839dd1fde6e05acde895bd8287ab43663ec89b476b42872ac"
+      url "https://github.com/grpcmd/grpcmd/releases/download/v0.2.1/grpcmd_0.2.1_darwin_arm64.tar.gz"
+      sha256 "c243c4c69b7b59a529a119634e1acd767c6a0d7ed9da11560f38779355487314"
 
       def install
         bin.install "grpc"
@@ -35,8 +35,8 @@ class Grpcmd < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/grpcmd/grpcmd/releases/download/v0.2.0/grpcmd_0.2.0_linux_amd64.tar.gz"
-        sha256 "5abad3ef3b90dbf9547041982e1cda6d61c0db1fa211cc6e8ca77f102ca70a68"
+        url "https://github.com/grpcmd/grpcmd/releases/download/v0.2.1/grpcmd_0.2.1_linux_amd64.tar.gz"
+        sha256 "e7bffe5766b77d9211672d6b54f6977f0cf27dc24e23557e6555c333eda9372e"
 
         def install
           bin.install "grpc"
@@ -48,8 +48,8 @@ class Grpcmd < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/grpcmd/grpcmd/releases/download/v0.2.0/grpcmd_0.2.0_linux_arm64.tar.gz"
-        sha256 "dd245655dac1fae6f84358ddef8e02cea40c4ddfcf224cb9ae752ded8eec9861"
+        url "https://github.com/grpcmd/grpcmd/releases/download/v0.2.1/grpcmd_0.2.1_linux_arm64.tar.gz"
+        sha256 "b4e9c99f1db84d0306dc6d3bea74429c0cce81e80949f7f2f8cbe41ae97b9392"
 
         def install
           bin.install "grpc"
