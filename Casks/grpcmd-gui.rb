@@ -1,13 +1,13 @@
 cask "grpcmd-gui" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.1.0"
-  sha256 arm:   "f25e94f2c48d41667dcffc09cf96eed1f49a32ecad7b96292224ccdfcd464a67",
-         intel: "9db44e406e380bed90b2a3bc133897c32a685cf42e918b355b8ca58513f15dde"
+  version "0.2.0"
+  sha256 arm:   "adc98ed3e2f1395b1575c63dfd0b4527b1a21c4d2442e6290b9f72d2d4e6aee2",
+         intel: "957d424edfd661c82515f81d7e99bba28f02e24040bb26e57737c036cc78c583"
 
   url "https://github.com/grpcmd/grpcmd-gui/releases/download/v#{version}/grpcmd-gui_v#{version}_darwin-#{arch}-installer.dmg"
   name "grpcmd-gui"
-  desc "gRPC GUI"
+  desc "GRPC GUI"
   homepage "https://github.com/grpcmd/grpcmd-gui"
 
   depends_on macos: ">= :catalina"
