@@ -5,7 +5,8 @@ cask "grpcmd-gui" do
   sha256 arm:   "f25e94f2c48d41667dcffc09cf96eed1f49a32ecad7b96292224ccdfcd464a67",
          intel: "9db44e406e380bed90b2a3bc133897c32a685cf42e918b355b8ca58513f15dde"
 
-  url "https://github.com/grpcmd/grpcmd-gui/releases/download/v#{version}/grpcmd-gui_v#{version}_darwin-#{arch}-installer.dmg"
+  url "https://github.com/grpcmd/grpcmd-gui/releases/download/v#{version}/grpcmd-gui_v#{version}_darwin-#{arch}-installer.dmg",
+      verified: "github.com/grpcmd/grpcmd-gui/"
   name "grpcmd-gui"
   desc "gRPC GUI"
   homepage "https://grpc.md"
